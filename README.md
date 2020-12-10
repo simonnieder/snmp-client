@@ -9,7 +9,6 @@ Alternatively if you have at least python 3 installed on your system, you can in
 
 ## Usage
 
-Type<br>
 `/help` to see all available commands,<br>
 `/get` to perform snmp get operation,<br>
 `/set` to perform snmp set operation,<br>
