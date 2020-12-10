@@ -5,7 +5,7 @@
 ## Installation
 
 To run the program you only need to launch "main.exe" in the /dist folder.<br>
-Alternatively if you have at least python 3 installed on your system, you can install pysnmp using the command `pip install pysnmp` and then you'd have to run "main.py".<br><br>
+Alternatively if you have at least python 3 installed on your system, you can install pysnmp using the command `pip install pysnmp` and then you'd have to run "main.py".<br>
 
 ## Usage
 
