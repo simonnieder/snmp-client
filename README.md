@@ -4,13 +4,13 @@ snmp client written in python using the library pysnmp
 
 ## Installation
 
-First you need to have at least python 3 installed on your system.<br>
-Then using following command you will need to install pysnmp
+To run the program you only need to launch "main.exe" in the /dist folder.<br><br>
+Alternatively if you have at least python 3 installed on your system, you can install pysnmp with the following command:
 
 ```
 pip install pysnmp
 ```
 
-Finally you'll just need to launch main.py
+and then you'd have to run "main.py"
 
 Made by Simon Niederwolfsgruber

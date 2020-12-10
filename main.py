@@ -1,11 +1,14 @@
 import snmpFunctions
 import pysnmp
 import ipaddress
-print("snmp-client by Simon Niederwolfsgruber.\n")
+print("\nSNMP-client by Simon Niederwolfsgruber\n")
+print("Command list:")
+print("/help to see all available commands\n/get to perform snmp get operation\n/set to perform snmp set operation\n/get-auto to get basic snmp information from a client\n/scan to scan a network for snmp devices\n")
+
 while True:
     operation = input("Type your command! Type /help to see all available commands\n")
     if operation == "/help":
-        print("/get to perform snmp get operation\n/set to perform snmp set operation\n/get-auto to get basic snmp information\n/scan to scan a network for snmp devices\n")
+        print("/help to see all available commands\n/get to perform snmp get operation\n/set to perform snmp set operation from a client\n/get-auto to get basic snmp information\n/scan to scan a network for snmp devices\n")
     elif operation == "/get":
         ip = input('Enter the IP you want to use\n')
         community = input('Enter the community (default is "public") press enter to skip input and keep default)\n')
