@@ -33,9 +33,9 @@ while True:
             print('IP-Address format not valid! Try again!')
     elif operation == "/get-auto":
         ip = input('Enter the IP you want to use\n')
-        community = input('Enter the community (default is "private") press enter to skip and keep default)\n')
+        community = input('Enter the community (default is "public") press enter to skip and keep default)\n')
         if not community:
-            community = "private"
+            community = "public"
         oids = [".1.3.6.1.2.1.1.3.0", ".1.3.6.1.2.1.1.4.0", ".1.3.6.1.2.1.1.5.0", ".1.3.6.1.2.1.1.1.0", ".1.3.6.1.2.1.25.1.6.0"]
         for oid in oids:
             snmpFunctions.get(ip, oid, community)
@@ -43,7 +43,7 @@ while True:
         community = input('Enter the community (default is "private") press enter to skip and keep default)\n')
         if not community:
             community = "private"
-        network = input("Type your network address (example: 10.10.30.0/24")
+        network = input("Type your network address (example: 10.10.30.0/24)\n")
         try: 
             snmpFunctions.scanNetwork(network, community)
         except ipaddress.AddressValueError:
