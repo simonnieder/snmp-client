@@ -1,14 +1,26 @@
 import snmpFunctions
+import pysnmp
+import ipaddress
+print("\nSNMP-client by Simon Niederwolfsgruber\n")
+print("Command list:")
+print("/help to see all available commands\n/get to perform snmp get operation\n/set to perform snmp set operation\n/get-auto to get basic snmp information from a client\n/scan to scan a network for snmp devices\n")
 
 while True:
-    operation = input("What do you want to do? Type /get to perform get operation, /set to perform set operation, /get-auto to get basic snmp information\n")
-    if operation == "/get":
+    operation = input("Type your command! Type /help to see all available commands\n")
+    if operation == "/help":
+        print("/help to see all available commands\n/get to perform snmp get operation\n/set to perform snmp set operation from a client\n/get-auto to get basic snmp information\n/scan to scan a network for snmp devices\n")
+    elif operation == "/get":
         ip = input('Enter the IP you want to use\n')
         community = input('Enter the community (default is "public") press enter to skip input and keep default)\n')
         if not community:
             community = "public"
         oid = input('Enter the oid you want to use\n')
-        snmpFunctions.get(ip, str(oid), community)
+        try:
+            snmpFunctions.get(ip, str(oid), community)
+        except pysnmp.smi.error.MibNotFoundError:
+            print('OID format not valid! Try again!')
+        except pysnmp.smi.error.PySnmpError:
+            print('IP-Address format not valid! Try again!')
     elif operation == "/set":
         ip = input('Enter the IP you want to use\n')
         community = input('Enter the community (default is "private") press enter to skip and keep default)\n')
@@ -16,17 +28,31 @@ while True:
             community = "private"
         oid = input('Enter the oid whose value you want to set\n')
         value = input('Enter value\n')
-        snmpFunctions.set(ip, str(oid), value, community)
+        try:
+            snmpFunctions.set(ip, str(oid), value, community)
+        except pysnmp.smi.error.MibNotFoundError:
+            print('OID format not valid! Try again!')
+        except pysnmp.smi.error.PySnmpError:
+            print('IP-Address format not valid! Try again!')
     elif operation == "/get-auto":
         ip = input('Enter the IP you want to use\n')
-        community = input('Enter the community (default is "private") press enter to skip and keep default)\n')
+        community = input('Enter the community (default is "public") press enter to skip and keep default)\n')
         if not community:
-            community = "private"
+            community = "public"
         oids = [".1.3.6.1.2.1.1.3.0", ".1.3.6.1.2.1.1.4.0", ".1.3.6.1.2.1.1.5.0", ".1.3.6.1.2.1.1.1.0", ".1.3.6.1.2.1.25.1.6.0"]
         for oid in oids:
             snmpFunctions.get(ip, oid, community)
+    elif operation == "/scan":
+        community = input('Enter the community (default is "private") press enter to skip and keep default)\n')
+        if not community:
+            community = "private"
+        network = input("Type your network address (example: 10.10.30.0/24)\n")
+        try: 
+            snmpFunctions.scanNetwork(network, community)
+        except ipaddress.AddressValueError:
+            print("Network address not valid! Try again!")
     else:
-        print("Command invalid. Try again")
+        print("Command not valid! Try again!")
 
 
 '''
