@@ -1,6 +1,6 @@
 # SNMP-Client
 
-### SNMP-Client written in python using the library [pysnmp](https://github.com/etingof/pysnmp)
+### SNMP-Client written in python using the library <a href="https://github.com/etingof/pysnmp" target="_blank">pysnmp</a>
 
 ## Installation
 
