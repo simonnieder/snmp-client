@@ -9,10 +9,10 @@ Alternatively if you have at least python 3 installed on your system, you can in
 
 ## Usage
 
-`/help` to see all available commands,<br>
-`/get` to perform snmp get operation,<br>
-`/set` to perform snmp set operation,<br>
-`/get-auto` to get basic snmp information from a client,<br>
+`/help` to see all available commands<br>
+`/get` to perform snmp get operation<br>
+`/set` to perform snmp set operation<br>
+`/get-auto` to get basic snmp information from a client<br>
 `/scan` to scan a network for snmp devices<br>
 
 Made by Simon Niederwolfsgruber
