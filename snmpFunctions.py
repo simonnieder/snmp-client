@@ -11,6 +11,7 @@ def get(ip, oid, communityName): #executes SNMP GET-operation
         ObjectType(ObjectIdentity(oid)))
     
     errorIndication, errorStatus, errorIndex, varBinds = next(iterator)
+    
     if errorIndication:
         print(f"{ip} not reachable")
     elif errorStatus:
