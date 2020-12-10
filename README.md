@@ -1,10 +1,10 @@
 # SNMP-Client
 
-### SNMP-Client written in python using the library <a href="https://github.com/etingof/pysnmp" target="_blank">pysnmp</a>
+### SNMP-Client written in python using the library [pysnmp](https://github.com/etingof/pysnmp)
 
 ## Installation
 
-To run the program you only need to launch "main.exe" in the /dist folder.  
+To run the program you need to open the [release](https://github.com/simonnieder/snmp-client/releases/), download the **Source code (zip)** and launch "main.exe" in the /dist folder.  
 Alternatively if you have at least python 3 installed on your system, you can install pysnmp using the command `pip install pysnmp` and then you'd have to run "main.py".
 
 ## Working Features
