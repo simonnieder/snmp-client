@@ -14,8 +14,8 @@ def get(ip, oid, communityName): #executes SNMP GET-operation
     
     errorIndication, errorStatus, errorIndex, varBinds = next(iterator)
 
-    # if errorIndication:
-        #print(errorIndication)
+    if errorIndication:
+        print(errorIndication)
     if errorStatus:
         print('%s at %s' % (errorStatus.prettyPrint(), errorIndex and varBinds[int(errorIndex) - 1][0] or '?'))
     else:
