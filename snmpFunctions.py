@@ -70,9 +70,11 @@ def set(ip, oid, value, communityName): #executes SNMP SET-operation
     else:
         print('Value set\n')
             
+            
 def scanNetwork(network, community): #iterates through all ips of a given network and makes a snmp request to get host name
     for ip in ipaddress.IPv4Network(network):
         oids = [".1.3.6.1.2.1.1.5.0"]
         for oid in oids:
             thread = Thread(target = get,args =(str(ip), oid, community))
             thread.start()
+

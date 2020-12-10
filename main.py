@@ -83,6 +83,7 @@ if __name__ == "__main__":
             print("Command not valid! Try again!")
 
 
+
 '''
 uptime: .1.3.6.1.2.1.1.3.0
 contact: .1.3.6.1.2.1.1.4.0
