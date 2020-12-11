@@ -11,7 +11,7 @@ Alternatively if you have at least python 3 installed on your system, you can in
 
 - SNMP GET-Request
 - SNMP SET-Request
-- Receive SNMP-trap
+- Receive SNMP-traps
 - Scan whole network
 
 ## Coming Soon
@@ -21,9 +21,11 @@ Alternatively if you have at least python 3 installed on your system, you can in
 ## Usage
 
 `/help` to see all available commands  
-`/get` to perform snmp get operation  
-`/set` to perform snmp set operation  
-`/get-auto` to get basic snmp information from a client  
-`/scan` to scan a network for snmp devices
+`/get` to perform SNMP GET-Request  
+`/set` to perform SNMP SET-Request  
+`/get-auto` to get basic SNMP information from a client  
+`/scan` to scan a network for SNMP devices  
+`/listen` to receive snmp traps
+`/quit` to quit the program
 
 Made by Simon Niederwolfsgruber
