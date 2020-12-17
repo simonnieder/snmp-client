@@ -28,4 +28,8 @@ Alternatively if you have at least python 3 installed on your system, you can in
 `/listen` to receive snmp traps  
 `/quit` to quit the program
 
+## User Interface
+
+![user interface](./ui.png)
+
 Made by Simon Niederwolfsgruber

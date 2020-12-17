@@ -1,7 +1,6 @@
 import snmpFunctions
 import pysnmp
 import ipaddress
-
 def inputIP():
     return input('Enter the IP you want to use\n')
 
@@ -14,7 +13,7 @@ def inputCommunity(default = "public"):
 def inputOID():
     return input('Enter the Objectname you want to use\n')
 
-def getOperation(ip, community, oid):
+def getOperation(ip, community, oid): 
     try:
         print(f"{ip} OID = {oid}, VALUE = {snmpFunctions.get(ip, community, oid)}")
     except pysnmp.smi.error.MibNotFoundError:
@@ -71,6 +70,7 @@ if __name__ == "__main__":
 
         else:
             print("Command not valid! Try again!")
+            
 
 
 

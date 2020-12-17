@@ -5,7 +5,7 @@ from pysnmp.entity import engine, config
 from pysnmp.carrier.asyncore.dgram import udp
 from pysnmp.entity.rfc3413 import ntfrcv
 
-def listen(port): #listens for incoming traps  #! currently no way of stopping the function
+def listen(port): #listens for incoming traps
     try:
         myEngine = engine.SnmpEngine()
         print("Listening on port:" + str(port))
@@ -57,32 +57,7 @@ def get(ip, communityName, oid, isThreaded = False): #executes SNMP GET-operatio
         else:
             for varBind in varBinds:
                 return varBind[1]
-
-def getWithMib(ip, communityName, oid, filename): #executes SNMP GET-operation #! not working at all
-    iterator = getCmd(
-        SnmpEngine(),
-        CommunityData(communityName),
-        UdpTransportTarget((ip, 161)),
-        ContextData(),
-        ObjectType(ObjectIdentity(oid).addAsn1MibSource(
-            'file:///usr/share/snmp', 
-            filename
-        )))
-    
-    errorIndication, errorStatus, errorIndex, varBinds = next(iterator)
-    
-    if errorIndication:
-        print(f"{ip} not reachable")
-    elif errorStatus:
-        print('%s at %s' % (errorStatus.prettyPrint(), errorIndex and varBinds[int(errorIndex) - 1][0] or '?'))
-    else:
-        result = ip;
-        for varBind in varBinds:
-            for x in varBinds:
-                result = result +  " " + str(x)
-        print(result)
    
-    
 def set(ip, communityName, oid, value): #executes SNMP SET-operation
     iterator = setCmd(
         SnmpEngine(),
