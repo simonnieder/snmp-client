@@ -12,7 +12,7 @@ def get(ip, communityName, oid, isThreaded = False): #performs SNMP GET-operatio
         CommunityData(communityName),
         UdpTransportTarget((ip, 161)),
         ContextData(),
-        ObjectType(ObjectIdentity('SNMPv2-MIB', oid, 0)))
+        ObjectType(ObjectIdentity(oid)))
     
     errorIndication, errorStatus, errorIndex, varBinds = next(iterator)
     
@@ -28,8 +28,27 @@ def get(ip, communityName, oid, isThreaded = False): #performs SNMP GET-operatio
         else:
             for varBind in varBinds:
                 return varBind[1]
-            
-#    
+
+
+def getWithMib(ip, communityName, oid, mib= 'SNMPv2-MIB'): #performs SNMP GET-operation by using a mibfile
+    iterator = getCmd(
+        SnmpEngine(),
+        CommunityData(communityName),
+        UdpTransportTarget((ip, 161)),
+        ContextData(),
+        ObjectType(ObjectIdentity(mib, oid, 0)))
+    
+    errorIndication, errorStatus, errorIndex, varBinds = next(iterator)
+    
+    if errorIndication:
+            print(f'{ip} not reachable')
+    elif errorStatus:
+        print('%s at %s' % (errorStatus.prettyPrint(), errorIndex and varBinds[int(errorIndex) - 1][0] or '?'))
+    else:
+        for varBind in varBinds:
+            return varBind[1]
+
+ 
 def set(ip, communityName, oid, value): #performs SNMP SET-operation
     iterator = setCmd(
         SnmpEngine(),

@@ -13,7 +13,7 @@ Alternatively if you have at least python 3 installed on your system, you can in
 - SNMP SET-Request
 - Receive SNMP-traps
 - Scan whole network
-- Use SNMPv2-MIB file to request information
+- Use predefined mib files to request information
 
 ## Coming Soon
 
