@@ -3,7 +3,7 @@
 block_cipher = None
 
 
-a = Analysis(['main.py'],
+a = Analysis(['src\\main.py'],
              pathex=['C:\\Users\\Simon\\Google Drive\\Schule\\5.Klasse\\SN\\snmp-client\\snmp-client'],
              binaries=[],
              datas=[],
