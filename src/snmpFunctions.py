@@ -29,7 +29,7 @@ def get(ip, communityName, oid, isThreaded = False): #performs SNMP GET-operatio
             for varBind in varBinds:
                 return varBind[1]
             
-   
+#    
 def set(ip, communityName, oid, value): #performs SNMP SET-operation
     iterator = setCmd(
         SnmpEngine(),
