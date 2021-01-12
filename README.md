@@ -25,6 +25,7 @@ Alternatively if you have at least python 3 installed on your system, you can in
 `/get` to perform SNMP GET-Request  
 `/set` to perform SNMP SET-Request  
 `/get-auto` to get basic SNMP information from a client  
+`/get-mib` to perform SNMP SET-Request using MIB-files
 `/scan` to scan a network for SNMP devices  
 `/listen` to listen for incoming snmp traps  
 `/quit` to quit the program
