@@ -16,7 +16,7 @@ def inputCommunity(): #performs the community input
 
 
 def inputOID(): #performs the oid input
-    return input('Enter the Objectname you want to use\n')
+    return input('Enter the OID you want to use\n')
 
 
 def getOperation(ip, community, oid): #performs the GET operation and handles result + errors
