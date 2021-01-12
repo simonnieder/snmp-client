@@ -12,7 +12,7 @@ def get(ip, communityName, oid, isThreaded = False): #performs SNMP GET-operatio
         CommunityData(communityName),
         UdpTransportTarget((ip, 161)),
         ContextData(),
-        ObjectType(ObjectIdentity(oid)))
+        ObjectType(ObjectIdentity('SNMPv2-MIB', oid, 0)))
     
     errorIndication, errorStatus, errorIndex, varBinds = next(iterator)
     
@@ -36,7 +36,7 @@ def set(ip, communityName, oid, value): #performs SNMP SET-operation
         CommunityData(communityName),
         UdpTransportTarget((ip, 161)),
         ContextData(),
-        ObjectType(ObjectIdentity(oid), value))
+        ObjectType(ObjectIdentity('SNMPv2-MIB', oid, 0)))
     errorIndication, errorStatus, errorIndex, varBinds = next(iterator)
 
     if errorIndication:
