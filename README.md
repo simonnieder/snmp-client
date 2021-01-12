@@ -5,7 +5,7 @@
 ## Installation
 
 To run the program you need to open the [release](https://github.com/simonnieder/snmp-client/releases/), download the **Source code (zip)** and launch "main.exe" in the /executable folder.  
-Alternatively if you have at least python 3 installed on your system, you can install pysnmp using the command `pip install pysnmp` and then you'd have to run "main.py".
+Alternatively if you have at least python 3 installed on your system, you can install pysnmp using the command `pip install pysnmp` and then you'd have to run "src/main.py".
 
 ## Working Features
 
