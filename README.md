@@ -30,6 +30,6 @@ Alternatively if you have at least python 3 installed on your system, you can in
 
 ## User Interface
 
-![user interface](./ui.png)
+![user interface](https://i.imgur.com/7YD2CFD.png)
 
 Made by Simon Niederwolfsgruber
